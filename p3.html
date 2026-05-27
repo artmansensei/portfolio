@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T. M. Shamim | Portfolio</title>
+    <link rel="stylesheet" href="p3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader-text">Loading Experience...</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Artman<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li> <!-- এই লাইনটি যোগ করুন -->
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <button id="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content reveal">
+            <div class="hero-image">
+                <img src="meaw.jpeg" alt="T. M. Shamim" class="profile-pic"> 
+            </div>
+            <div class="hero-text">
+                <p class="greeting">Welcome to my digital space</p>
+                <h1>T. M. Shamim</h1>
+                <h2 class="subtitle">I build <span class="typing-text"></span><span class="cursor-blink">|</span></h2>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn secondary">Let's Talk</a>
+                </div>
+            </div>
+        </div>
+        <div class="animated-grid"></div>
+    </header>
+
+<!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header reveal">
+            <h2>About Me</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="about-content reveal">
+            <!-- About Text -->
+            <div class="about-text">
+                <p>Hello! I'm <strong>T. M. Shamim</strong>, also known as <strong>Artman Sensei</strong> in the creative realm. I am a passionate developer and artist, blending hardcore logic with boundless creativity. My journey spans from engineering digital healthcare systems and building automated Robo Soccer bots to crafting intricate calligraphy and soothing landscape paintings.</p>
+                <p>I thrive on solving complex algorithmic challenges and exploring Machine Learning, while keeping a keen eye on clean UI/UX design. Whether I am writing code in C++, Python, and JavaScript, configuring servers on Linux, or holding a paintbrush, my goal is to create things that are both highly functional and aesthetically pleasing.</p>
+            </div>
+            
+           
+        </div>
+    </section>
+
+    
+    <section id="projects" class="projects-section">
+        <div class="section-header reveal">
+            <h2>Featured Work</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="project-grid">
+            <div class="tilt-card reveal">
+                <div class="card-inner">
+                    <div class="card-header">
+                        <i class="fa-solid fa-heart-pulse icon"></i>
+                        <div class="links">
+                            <a href="https://github.com/yourusername/prescrima" target="_blank" title="View Source Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                             <a href="https://prescrima.web.app" target="_blank" title="View Source Code">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                             </a>
+                        </div>
+                    </div>
+                    <h3>Prescrima</h3>
+                    <p>A digital healthcare ecosystem for modern medical record management and emergency blood donation coordination.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JS</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tilt-card reveal">
+                <div class="card-inner">
+                    <div class="card-header">
+                        <i class="fa-solid fa-paw icon"></i>
+                        <div class="links">
+                            <a href="https://github.com/yourusername/petcare" target="_blank" title="View Source Code">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                    </div>
+                    <h3>PetCare</h3>
+                    <p>A unified frontend architecture bridging e-commerce and scheduling for centralized pet care services.</p>
+                    <ul class="tech-stack">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JAVASCRIPT</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tilt-card reveal">
+                <div class="card-inner">
+                    <div class="card-header">
+                        <i class="fa-solid fa-robot icon"></i>
+                        <div class="links">
+                            <a href="https://github.com/yourusername/robo-soccer" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Robo Soccer Bot</h3>
+                    <p>Automated state modeling using Deterministic Finite Automata (DFA) logic for competition robotics.</p>
+                    <ul class="tech-stack">
+                        <li>Arduino Uno</li>
+                        <li>DSA</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header reveal">
+            <h2>My Skills</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="skills-grid reveal">
+            
+
+            <div class="skill-box">
+                <i class="fa-solid fa-language skill-icon"></i>
+                <h3>Language</h3>
+                <div class="skill-tags">
+                    <span>Bengli</span>
+                    <span>English</span>
+                    <span>Hindi</span> 
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-solid fa-code skill-icon"></i>
+                <h3>Web Development</h3>
+                <div class="skill-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span> 
+                </div>
+            </div>
+            
+            <div class="skill-box">
+                <i class="fa-solid fa-paintbrush skill-icon"></i>
+                <h3>Art and Craft</h3>
+                <div class="skill-tags">
+                    <span>Calligraphy</span>
+                    <span>Landscape</span>
+                    <span>Sketch</span>
+                    <span>Painting</span>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-solid fa-code skill-icon"></i>
+                <h3>Programming Language</h3>
+                <div class="skill-tags">
+                    <span>C</span>
+                    <span>C++</span>
+                    <span>Python</span>
+                    <span>Java</span> 
+                    <span>JavaScript</span> 
+                    <span>Assembly Language</span>
+                </div>
+            </div>
+            
+            <div class="skill-box">
+                <i class="fa-solid fa-brain skill-icon"></i>
+                <h3>Others</h3>
+                <div class="skill-tags">
+                    <span>DSA</span>
+                    <span>OOP</span>
+                    <span>Computer Networks</span>
+                    <span>Computer Graphics</span>
+                    <span>Database Management</span>
+                    <span>Digital Signal Processing</span>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <i class="fa-brands fa-linux skill-icon"></i>
+                <h3>Tools & OS</h3>
+                <div class="skill-tags">
+                    <span>Ubuntu</span>
+                    <span>Arduino Uno</span>
+                    <span>Firebase</span>
+                    <span>MySQL</span>
+                    <span>Cisco Packet Tracer</span>
+                    <span>VS Code</span>
+                    <span>Github</span>
+                    <span>Matlab</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="experience" class="timeline-section">
+        <div class="section-header reveal">
+            <h2>Journey & Milestones</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="timeline-container reveal">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Early 2026</div>
+                <div class="timeline-content">
+                    <h3>Hult Prize Judge</h3>
+                    <span class="location"><i class="fa-solid fa-university"></i> Varendra University</span>
+                    <p>Served as an evaluation panel judge for the prestigious Hult Prize on-campus competition. Responsibilities included assessing high-impact startup ideas presented by top student teams, aligned with United Nations Sustainable Development Goals (SDGs).</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">January 2026</div>
+                <div class="timeline-content">
+                    <h3>Robo Soccer Achievement</h3>
+                    <span class="location"><i class="fa-solid fa-trophy"></i> Robotics Competition</span>
+                    <p>Successfully designed and certified an automated Robo Soccer bot for competitive environments. Implemented robust algorithmic pathfinding and state modeling logic to control real-time dynamic hardware behaviors under tight tournament constraints.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">January 2026</div>
+                <div class="timeline-content">
+                    <h3>Robo Soccer Achievement</h3>
+                    <span class="location"><i class="fa-solid fa-trophy"></i> Robotics Competition</span>
+                    <p>Successfully designed and certified an automated Robo Soccer bot for competitive environments. Implemented robust algorithmic pathfinding and state modeling logic to control real-time dynamic hardware behaviors under tight tournament constraints.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">January 2026</div>
+                <div class="timeline-content">
+                    <h3>Robo Soccer Achievement</h3>
+                    <span class="location"><i class="fa-solid fa-trophy"></i> Robotics Competition</span>
+                    <p>Successfully designed and certified an automated Robo Soccer bot for competitive environments. Implemented robust algorithmic pathfinding and state modeling logic to control real-time dynamic hardware behaviors under tight tournament constraints.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact-section reveal">
+        <h2>Get In Touch</h2>
+        <p>Currently open for new opportunities and collaborations.</p>
+        <a href="https://facebook.com/artmansenseii" target="_blank" class="btn primary">Say Hello</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://instagram.com/artman_sensei" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/artmansensei" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="mailto:artmansensei@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/artmansensei" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Artman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="p3.js"></script>
+</body>
+</html>
