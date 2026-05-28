@@ -1,0 +1,1167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* Dynamic Theme Variables */
+:root[data-theme="dark"] {
+    --bg-color: #050505;
+    --surface-color: #111111;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent: #3b82f6; 
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #2563eb; 
+    --accent-glow: rgba(37, 99, 235, 0.15);
+    --border: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(var(--bg-color), 0.8);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a, #theme-toggle {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, #theme-toggle:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center; 
+    gap: 4rem; 
+    z-index: 2;
+}
+
+.greeting {
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+}
+
+.cursor-blink {
+    animation: blink 1s infinite;
+    color: var(--accent);
+}
+
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    transition: transform 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    margin-left: 1rem;
+}
+
+.btn.secondary:hover {
+    background: var(--accent-glow);
+}
+
+.animated-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section Global Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-header .line {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 100px 10%;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+/* Cinematic Tilt Cards */
+.tilt-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+.card-header .links a {
+    color: var(--text-muted);
+    margin-left: 1rem;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+    position: relative; 
+    z-index: 20;
+}
+
+.card-header .links a:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+}
+
+.tilt-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    transform: translateZ(30px);
+}
+
+.tilt-card p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    transform: translateZ(20px);
+}
+
+.tech-stack {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   Skills Section
+========================================= */
+.skills-section {
+    padding: 100px 10%;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-box {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.skill-box:hover .skill-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.skill-box h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tags span {
+    background: var(--accent-glow);
+    color: var(--text-main);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+    cursor: default; 
+}
+
+.skill-tags span:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--accent-glow);
+}
+
+/* =========================================
+   About Section
+========================================= */
+.about-section {
+    padding: 100px 10%;
+}
+
+.about-content {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1.2;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+    color: var(--accent);
+}
+
+/* =========================================
+   Timeline Section
+========================================= */
+.timeline-section {
+    padding: 100px 10%;
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+    padding-right: 4rem;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 4rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 2.6rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 3px solid var(--accent);
+    z-index: 10;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s, box-shadow 0.4s;
+}
+
+.timeline-item.left .timeline-dot {
+    right: -8px;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -8px;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.4);
+    background: var(--accent);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+.timeline-date {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.timeline-content {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+.timeline-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content .location {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.timeline-content .location i {
+    color: var(--accent);
+    margin-right: 5px;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* =========================================
+   Education Section
+========================================= */
+.education-section {
+    padding: 100px 10%;
+}
+
+.title-with-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-with-icon i {
+    font-size: 2.2rem;
+    color: var(--accent);
+}
+
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.edu-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.edu-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.edu-institute {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.edu-duration {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   Contact Section
+========================================= */
+.contact-section {
+    padding: 100px 10%;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem; /* গ্যাপ একটু কমিয়ে দেওয়া হলো */
+    max-width: 1100px; /* কন্টেইনারের সাইজ লিমিট করে দেওয়া হলো */
+    margin: 0 auto; /* পুরো সেকশনটিকে স্ক্রিনের ঠিক মাঝে আনার জন্য */
+    justify-content: center; /* space-between এর বদলে center ব্যবহার করা হলো */
+    align-items: center;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.contact-left {
+    text-align: left;
+    z-index: 1;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    margin: 1rem 0;
+    line-height: 1.1;
+}
+
+.contact-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 70%;
+}
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Single unified class for all contact buttons */
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.c-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.info-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Added transition for smooth hover animation */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect exactly like the skill boxes */
+.info-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.info-item i {
+    color: var(--accent);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+    /* Added transition to make the icons smooth too */
+    transition: transform 0.4s ease;
+}
+
+/* Optional: Bonus icon animation on hover just like the skill icons */
+.info-card:hover .info-item i {
+    transform: scale(1.1);
+}
+/* =========================================
+   Footer
+========================================= */
+.footer {
+    background: var(--surface-color);
+    border-top: 1px solid var(--border);
+    padding: 3rem 10%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-5px) scale(1.1);
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* =========================================
+   Mobile Optimization
+========================================= */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .btn.secondary {
+        margin-left: 0;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .timeline-line {
+        left: 20px;
+        transform: none;
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 0;
+        text-align: left !important;
+    }
+    .timeline-item.left, .timeline-item.right {
+        left: 0;
+    }
+    .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-left {
+        text-align: center;
+    }
+    .contact-buttons {
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   Certificates Section
+========================================= */
+.certificates-section {
+    padding: 100px 10%;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Certificate Card Style */
+.cert-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden; /* যেন ছবি বর্ডারের বাইরে না যায় */
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+/* Image & Overlay Effects */
+.cert-image {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+
+.cert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* সার্টিফিকেটের উপরের অংশ ফোকাস করবে */
+    transition: transform 0.5s ease;
+}
+
+.cert-card:hover .cert-image img {
+    transform: scale(1.1); /* হোভার করলে ছবি জুম হবে */
+}
+
+/* The Dark Overlay */
+.cert-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    backdrop-filter: blur(3px); /* পেছনের ছবি হালকা ব্লার হবে */
+    transition: opacity 0.4s ease;
+}
+
+.cert-card:hover .cert-overlay {
+    opacity: 1; /* হোভার করলে ওভারলে ভিজিবল হবে */
+}
+
+/* Content Style */
+.cert-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.cert-content h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.cert-issuer {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.cert-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Responsive adjustment for Mobile */
+@media screen and (max-width: 768px) {
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   Art Gallery Section
+========================================= */
+.art-section {
+    padding: 100px 10%;
+}
+
+.art-grid {
+    display: grid;
+    /* আর্টওয়ার্কের জন্য গ্রিড সাইজ কিছুটা ছোট রাখা হয়েছে যেন গ্যালারি ফিল আসে */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.art-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* ছবিগুলোকে স্কয়ার শেপে রাখবে */
+    border: 1px solid var(--border);
+    cursor: crosshair; /* আর্টিস্টিক ফিল দেওয়ার জন্য কার্সর চেঞ্জ */
+}
+
+.art-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.art-item:hover img {
+    transform: scale(1.15); /* হোভার করলে ছবি একটু বেশি জুম হবে */
+}
+
+/* Glassmorphism Overlay */
+.art-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.art-item:hover .art-overlay {
+    opacity: 1;
+}
+
+.art-info {
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.art-item:hover .art-info {
+    transform: translateY(0);
+}
+
+.art-info h3 {
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.art-info span {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .art-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .art-info h3 {
+        font-size: 1.1rem;
+    }
+    .art-info span {
+        font-size: 0.75rem;
+    }
+}
+
+/* =========================================
+   3D Parallax Tilt Effects
+========================================= */
+/* কার্ডগুলোকে 3D স্পেস অ্যালাউ করা হলো */
+.project-card, .skill-box, .edu-card, .info-card, .cert-card, .art-item {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+/* মাউস হোভার করলে ভেতরের কন্টেন্টগুলো 40px সামনের দিকে পপ-আপ হয়ে আসবে */
+.project-card h3, .project-card p, .card-header, 
+.skill-box h3, .skill-box i, .skill-tags,
+.edu-content, .info-card .info-item, 
+.cert-content, .art-info {
+    transform: translateZ(40px);
+    transition: transform 0.3s ease;
+}
+
+/* যেহেতু Vanilla-tilt নিজেই অ্যানিমেশন কন্ট্রোল করছে, 
+তাই আগের হোভার থেকে transform রিমুভ করা হলো যেন কনফ্লিক্ট না করে */
+.project-card:hover, .skill-box:hover, .edu-card:hover, .info-card:hover, .cert-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px var(--accent-glow);
+}
+
+/* =========================================
+   Particle JS Background Setup
+========================================= */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* ব্যাকগ্রাউন্ডে থাকবে */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center; 
+    gap: 4rem; 
+    position: relative;
+    z-index: 2; /* টেক্সট এবং ছবি পার্টিকেলের উপরে থাকবে */
+}
+
+/* আপনার আগের ছবির স্টাইল (যদি ডিলিট হয়ে গিয়ে থাকে) */
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+    transition: transform 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================
+   3D Parallax Scrolling Divider
+========================================= */
+.parallax-divider {
+    position: relative;
+    height: 40vh; /* স্ক্রিনের ৪০% জায়গা নেবে */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* আপনার গ্যালারির যেকোনো একটি আর্টের ছবি ব্যাকগ্রাউন্ডে দিন */
+    background-image: url('meaw.jpeg'); 
+    background-attachment: fixed; /* CSS Parallax Magic */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.parallax-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.7); /* ডার্ক ওভারলে যেন টেক্সট পড়া যায় */
+    z-index: -1;
+}
+
+.parallax-content {
+    text-align: center;
+    color: #fff;
+}
+
+.parallax-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.8);
+}
+
+.parallax-content p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   3D Floating Background Orbs
+========================================= */
+.bg-shape {
+    position: fixed; 
+    border-radius: 50%;
+    filter: blur(100px); /* শেপগুলোকে গ্লোয়িং বানানোর জন্য ব্লার করা হলো */
+    z-index: -5;
+    opacity: 0.35;
+    pointer-events: none; /* মাউস ক্লিকে যেন ডিস্টার্ব না করে */
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    top: 10%;
+    left: -150px;
+}
+
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: #8b5cf6; /* একটি সুন্দর পার্পল কালার মিক্স */
+    bottom: 20%;
+    right: -200px;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: #0ea5e9;
+    top: 50%;
+    left: 40%;
+}
+
+@media screen and (max-width: 768px) {
+    .parallax-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   Link Click Fix for 3D Cards
+========================================= */
+/* ভেতরের লেয়ারে 3D স্পেস অন করা হলো */
+.card-inner {
+    transform-style: preserve-3d;
+    padding: 4px 10px; 
+}
+
+/* লিংকগুলোকে সবকিছুর উপরে (front-most) আনা হলো */
+.card-header .links a {
+    position: relative;
+    z-index: 9999; /* গ্লাস ইফেক্টের উপরে আনার জন্য */
+    transform: translateZ(90px); /* কার্ডের অন্যান্য লেখার চেয়েও সামনে আনার জন্য */
+    pointer-events: auto; /* ক্লিক এনাবল করার জন্য */
+    cursor: pointer;
+}
+
+
+/* Animations */
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes pulse { 50% { opacity: 0.5; } }
