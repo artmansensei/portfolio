@@ -1101,6 +1101,79 @@ body {
     text-transform: uppercase;
 }
 
+
+.expandable-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+/*------------------------------------------*/
+/* Description animation */
+.card-description {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.4s ease,
+                opacity 0.3s ease;
+}
+
+.card-description p {
+    min-height: 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.expandable-card.expanded .card-description {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.expandable-card.expanded .card-description p {
+    margin-top: 20px;
+}
+
+/* Arrow indicator */
+.expand-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    height: 22px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease,
+                transform 0.3s ease;
+}
+
+.expand-indicator i {
+    color: #3b82f6;
+    font-size: 16px;
+    transition: transform 0.35s ease,
+                color 0.3s ease;
+}
+
+/* Show arrow on hover */
+.expandable-card:hover .expand-indicator {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Expanded state */
+.expandable-card.expanded .expand-indicator {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.expandable-card.expanded .expand-indicator i {
+    transform: rotate(180deg);
+}
+
+/* Hover effect */
+.expandable-card:hover .expand-indicator i {
+    color: #60a5fa;
+}
+
+
 /* =========================================
    3D Floating Background Orbs
 ========================================= */
