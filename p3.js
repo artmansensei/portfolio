@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* 3. Dynamic Typing Effect */
     const typingText = document.querySelector('.typing-text');
-    const phrases = ["Developer.", "artist.", "writer.", "photographer."];
+    const phrases = ["a developer.", "an artist.", "a writer.", "a photographer."];
     let phraseIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
