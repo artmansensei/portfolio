@@ -1063,7 +1063,7 @@ body {
     align-items: center;
     justify-content: center;
     /* আপনার গ্যালারির যেকোনো একটি আর্টের ছবি ব্যাকগ্রাউন্ডে দিন */
-    background-image: url('meaw.jpeg'); 
+    background-image: url('image.jpg'); 
     background-attachment: fixed; /* CSS Parallax Magic */
     background-position: center;
     background-repeat: no-repeat;
